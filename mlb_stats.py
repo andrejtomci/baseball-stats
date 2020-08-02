@@ -5,6 +5,10 @@ import urllib.request
 from itertools import groupby
 import collections
 import re
+import os
+
+import click
+from jinja2 import Environment, FileSystemLoader
 
 PRINT_STRING = "maximálna séria výhier:{0:>2}; nastala:{1:>2}x; handicaps: {2:>2} <====> maximálna séria prehier:{" \
                "3:>2}; nastala:{4:>2}x; handicaps: {5:>2} "
@@ -113,9 +117,28 @@ def print_stats(stats):
         print("|{0:^25}|: {1}|\n".format(team, to_print))
 
 
-def main():
+def fill_template(stats):
+    file_loader = FileSystemLoader("templates")
+    env = Environment(loader=file_loader)
+
+    template = env.get_template("mlb_stats.html")
+
+    rendered_html = template.render(teams=stats)
+
+    if not os.path.exists("public"):
+        os.makedirs("public")
+    with open("public/index.html", "w") as out_file:
+        out_file.write(rendered_html)
+
+
+@click.command()
+@click.option("--template", is_flag=True)
+def main(template):
     stats = mlb_stats()
-    print_stats(stats)
+    if template:
+        fill_template(stats)
+    else:
+        print_stats(stats)
 
 
 if __name__ == '__main__':

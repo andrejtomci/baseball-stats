@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<body>
+<table border="1">
+    <tr>
+        <th>Tím</th>
+        <th>Maximálna séria výhier</th>
+        <th>Koľkokrát nastala</th>
+        <th>Počet výhier v handicapoch</th>
+        <th>Maximálna séria prehier</th>
+        <th>Koľkokrát nastala</th>
+        <th>Počet prehier v handicapoch</th>
+    </tr>
+    {%- for team, team_stats in teams.items() -%}
+    <tr>
+        <td style="text-align:center">{{ team }}</td>
+        <td style="text-align:center">{{ team_stats["max_win_streak"] }}</td>
+        <td style="text-align:center">{{ team_stats["max_win_streak_count"] }}</td>
+        <td style="text-align:center">{{ team_stats["win_handicaps"] }}</td>
+        <td style="text-align:center">{{ team_stats["max_loss_streak"] }}</td>
+        <td style="text-align:center">{{ team_stats["max_loss_streak_count"] }}</td>
+        <td style="text-align:center">{{ team_stats["loss_handicaps"] }}</td>
+    </tr>
+    {%- endfor -%}
+</table>
+</body>
+</html>
