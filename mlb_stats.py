@@ -101,7 +101,7 @@ def mlb_stats():
         max_loss_streak, max_loss_streak_count = get_win_loss_streaks(team_results, "L")
         stats.get(team).update(
             {"win_handicaps": win_handicaps, "loss_handicaps": loss_handicaps, "max_win_streak": max_win_streak,
-             "max_win_streak_count": max_win_streak, "max_loss_streak": max_loss_streak,
+             "max_win_streak_count": max_win_streak_count, "max_loss_streak": max_loss_streak,
              "max_loss_streak_count": max_loss_streak_count})
 
     return stats
