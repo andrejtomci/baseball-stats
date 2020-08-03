@@ -6,7 +6,7 @@ on:
       - master
   schedule:
     - cron: 0-59/30 00-06 * * *
-    - cron: 0-59/30 21-00 * * *
+    - cron: 0-59/30 21-23 * * *
 
 jobs:
   build:
