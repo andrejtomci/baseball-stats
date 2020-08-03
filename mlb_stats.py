@@ -12,7 +12,9 @@ from jinja2 import Environment, FileSystemLoader
 
 PRINT_STRING = "maximálna séria výhier:{0:>2}; nastala:{1:>2}x; handicaps: {2:>2} <====> maximálna séria prehier:{" \
                "3:>2}; nastala:{4:>2}x; handicaps: {5:>2} "
-MLB_TEAMS = collections.OrderedDict([
+MLB_TEAMS = dict(
+    ("Los Angeles Dodgers", "http://www.baseball-reference.com/teams/LAD/2020-schedule-scores.shtml"),
+    ("New York Yankees", "http://www.baseball-reference.com/teams/NYY/2020-schedule-scores.shtml"),
     ("Minnesota Twins", "http://www.baseball-reference.com/teams/MIN/2020-schedule-scores.shtml"),
     ("Atlanta Braves", "http://www.baseball-reference.com/teams/ATL/2020-schedule-scores.shtml"),
     ("Milwaukee Brewers", "http://www.baseball-reference.com/teams/MIL/2020-schedule-scores.shtml"),
@@ -21,7 +23,6 @@ MLB_TEAMS = collections.OrderedDict([
     ("Detroit Tigers", "http://www.baseball-reference.com/teams/DET/2020-schedule-scores.shtml"),
     ("Philadelphia Phillies", "http://www.baseball-reference.com/teams/PHI/2020-schedule-scores.shtml"),
     ("Cincinnati Reds", "http://www.baseball-reference.com/teams/CIN/2020-schedule-scores.shtml"),
-    ("Los Angeles Dodgers", "http://www.baseball-reference.com/teams/LAD/2020-schedule-scores.shtml"),
     ("San Diego Padres", "http://www.baseball-reference.com/teams/SDP/2020-schedule-scores.shtml"),
     ("San Francisco Giants", "http://www.baseball-reference.com/teams/SFG/2020-schedule-scores.shtml"),
     ("Arizona Diamondbacks", "http://www.baseball-reference.com/teams/ARI/2020-schedule-scores.shtml"),
@@ -31,7 +32,6 @@ MLB_TEAMS = collections.OrderedDict([
     ("Cleveland Indians", "http://www.baseball-reference.com/teams/CLE/2020-schedule-scores.shtml"),
     ("Chicago White Sox", "http://www.baseball-reference.com/teams/CHW/2020-schedule-scores.shtml"),
     ("Kansas City Royals", "http://www.baseball-reference.com/teams/KCR/2020-schedule-scores.shtml"),
-    ("New York Yankees", "http://www.baseball-reference.com/teams/NYY/2020-schedule-scores.shtml"),
     ("Oakland Athletics", "http://www.baseball-reference.com/teams/OAK/2020-schedule-scores.shtml"),
     ("Seattle Marines", "http://www.baseball-reference.com/teams/SEA/2020-schedule-scores.shtml"),
     ("Baltimore Orioles", "http://www.baseball-reference.com/teams/BAL/2020-schedule-scores.shtml"),
@@ -43,7 +43,7 @@ MLB_TEAMS = collections.OrderedDict([
     ("Washington Nationals", "http://www.baseball-reference.com/teams/WSN/2020-schedule-scores.shtml"),
     ("New York Mets", "http://www.baseball-reference.com/teams/NYM/2020-schedule-scores.shtml"),
     ("St.Louis Cardinals", "http://www.baseball-reference.com/teams/STL/2020-schedule-scores.shtml"),
-])
+)
 
 
 def get_team_results(team_url):
