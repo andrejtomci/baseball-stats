@@ -12,7 +12,7 @@ from jinja2 import Environment, FileSystemLoader
 
 PRINT_STRING = "maximálna séria výhier:{0:>2}; nastala:{1:>2}x; handicaps: {2:>2} <====> maximálna séria prehier:{" \
                "3:>2}; nastala:{4:>2}x; handicaps: {5:>2} "
-MLB_TEAMS = dict(
+MLB_TEAMS = {
     ("Los Angeles Dodgers", "http://www.baseball-reference.com/teams/LAD/2020-schedule-scores.shtml"),
     ("New York Yankees", "http://www.baseball-reference.com/teams/NYY/2020-schedule-scores.shtml"),
     ("Minnesota Twins", "http://www.baseball-reference.com/teams/MIN/2020-schedule-scores.shtml"),
@@ -43,7 +43,7 @@ MLB_TEAMS = dict(
     ("Washington Nationals", "http://www.baseball-reference.com/teams/WSN/2020-schedule-scores.shtml"),
     ("New York Mets", "http://www.baseball-reference.com/teams/NYM/2020-schedule-scores.shtml"),
     ("St.Louis Cardinals", "http://www.baseball-reference.com/teams/STL/2020-schedule-scores.shtml"),
-)
+}
 
 
 def get_team_results(team_url):
