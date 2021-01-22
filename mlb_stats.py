@@ -54,7 +54,7 @@ def get_team_results(team_url):
 
     # get html as string
     website = str(urllib.request.urlopen(team_url).read())
-    body = website.split("</tbody>")[1]
+    body = website.split("<tbody>")[1]
 
     # split to matches
     matches = body.split("""<tr ><th scope="row" class="right " data-stat="team_game" >""")[1::]
