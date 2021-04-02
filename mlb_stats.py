@@ -3,7 +3,6 @@
 
 import urllib.request
 from itertools import groupby
-import collections
 import re
 import os
 
@@ -90,7 +89,7 @@ def get_win_loss_streaks(results, result_char):
     # get sorted win/loss streaks
     streaks = sorted([len(list(g)) for k, g in groupby(results) if k == result_char], reverse=True)
 
-    return streaks[0], streaks.count(streaks[0])
+    return (streaks[0], streaks.count(streaks[0])) if len(streaks) > 0 else (0, 0)
 
 
 def mlb_stats():
