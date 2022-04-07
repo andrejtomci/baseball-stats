@@ -11,7 +11,7 @@ from jinja2 import Environment, FileSystemLoader
 
 PRINT_STRING = "maximálna séria výhier:{0:>2}; nastala:{1:>2}x; handicaps: {2:>2} <====> maximálna séria prehier:{" \
                "3:>2}; nastala:{4:>2}x; handicaps: {5:>2} "
-SEASON = 2021
+SEASON = 2022
 MLB_TEAMS = {
     "Los Angeles Dodgers": f"http://www.baseball-reference.com/teams/LAD/{SEASON}-schedule-scores.shtml",
     "New York Yankees": f"http://www.baseball-reference.com/teams/NYY/{SEASON}-schedule-scores.shtml",
