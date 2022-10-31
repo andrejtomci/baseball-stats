@@ -5,6 +5,7 @@ import urllib.request
 from itertools import groupby
 import re
 import os
+import time
 
 import click
 from jinja2 import Environment, FileSystemLoader
@@ -103,6 +104,7 @@ def mlb_stats():
             {"win_handicaps": win_handicaps, "loss_handicaps": loss_handicaps, "max_win_streak": max_win_streak,
              "max_win_streak_count": max_win_streak_count, "max_loss_streak": max_loss_streak,
              "max_loss_streak_count": max_loss_streak_count})
+        time.sleep(10)
 
     return stats
 
